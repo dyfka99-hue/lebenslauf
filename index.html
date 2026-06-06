@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lebenslauf | Moritz Molva</title>
+    <meta name="description" content="Digitaler Lebenslauf von Moritz Molva - Student an der TU Wien mit Fokus auf Technik, KI & IT-Infrastruktur.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Moritz Molva | Technischer Lebenslauf">
+    <meta property="og:description" content="Student an der TU Wien | Fokus auf Technik, KI & IT-Infrastruktur.">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Moritz Molva",
+      "jobTitle": "Student",
+      "affiliation": "Technische Universität Wien",
+      "description": "Fokus auf Technik, KI & IT-Infrastruktur",
+      "url": "https://deine-url.at"
+    }
+    </script>
+
     <!-- Neue edle Google Fonts laden -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="main-header">
+    <header id="main-header" role="banner">
     <div class="header-content">
         <h1>Moritz Molva</h1>
         <p class="subtitle">STUDENT AN DER TU WIEN | FOKUS AUF TECHNIK, KI & IT-INFRASTRUKTUR</p>
     </div>
     
     <div class="theme-control">
-        <button id="theme-toggle">Dark Mode</button>
+        <button id="theme-toggle" aria-label="Farbschema umschalten">Dark Mode</button>
         <a href="#kontakt" class="nav-button">Kontakt</a>
     </div>
 </header>
@@ -42,7 +62,7 @@
             <div class="entry">
                 <h3>Allgemeinbildende Höhere Schule (AHS)</h3>
                 <p class="meta">Bundesgymnasium "Ella Lingens Gymnasium", Wien | 09/2016 - 06/2024</p>
-                <p style="margin-bottom: 5px;">Erfolgreicher Abschluss der Reifeprüfung (Oktober 2025).</p>
+                <p style="margin-bottom: 5px;">Erfolgreicher Abschluss der Reifeprüfung.</p>
                 <ul>
                     <li>Umfassende Allgemeinbildung als Basis für das technische Studium.</li>
                     <li>Besondere Spezialisierung: 5 Jahre intensiver Informatikunterricht (als Wahlpflichtfach in der Oberstufe).</li>
@@ -101,95 +121,101 @@
         <section id="kenntnisse">
             <h2>Fähigkeiten & Kenntnisse</h2>
             
-            <div class="skill-grid">
-                <!-- Skill 1 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">PC-Hardware & BIOS</span>
-                        <span class="skill-value">8/10</span>
+            <!-- Kategorie 1: Technik & IT -->
+            <div class="skill-category">
+                <h3>Technik & Infrastruktur</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PC-Hardware & BIOS</span>
+                            <span class="skill-value">8/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in PC-Hardware & BIOS: 8 von 10"><div class="skill-level" style="width: 80%;"></div></div>
                     </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Lokale KI & CLI</span>
+                            <span class="skill-value">7.5/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Lokale KI & CLI: 7.5 von 10"><div class="skill-level" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Linux (Ubuntu Server)</span>
+                            <span class="skill-value">6.5/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Linux (Ubuntu Server): 6.5 von 10"><div class="skill-level" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Netzwerktechnik</span>
+                            <span class="skill-value">6/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Netzwerktechnik: 6 von 10"><div class="skill-level" style="width: 60%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Web (HTML/CSS/JS)</span>
+                            <span class="skill-value">7/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Web (HTML/CSS/JS): 7 von 10"><div class="skill-level" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-value">4/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Python: 4 von 10"><div class="skill-level" style="width: 40%;"></div></div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Skill 2 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Englisch</span>
-                        <span class="skill-value">9/10</span>
+            <!-- Kategorie 2: Organisation -->
+            <div class="skill-category">
+                <h3>Management & Organisation</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MS Office</span>
+                            <span class="skill-value">9/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in MS Office: 9 von 10"><div class="skill-level" style="width: 90%;"></div></div>
                     </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Projektmanagement</span>
+                            <span class="skill-value">7/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Projektmanagement: 7 von 10"><div class="skill-level" style="width: 70%;"></div></div>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Skill 3 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Lokale KI & CLI (Ollama, LM Studio)</span>
-                        <span class="skill-value">7.5/10</span>
+            <!-- Kategorie 3: Sprachen -->
+            <div class="skill-category" style="margin-bottom: 0;">
+                <h3>Sprachen</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Deutsch (Muttersprache)</span>
+                            <span class="skill-value">10/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Deutsch: 10 von 10"><div class="skill-level" style="width: 100%;"></div></div>
                     </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
-                </div>
-
-                <!-- Skill 4 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">HTML / CSS / JavaScript</span>
-                        <span class="skill-value">7/10</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Englisch</span>
+                            <span class="skill-value">9/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Englisch: 9 von 10"><div class="skill-level" style="width: 90%;"></div></div>
                     </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 70%;"></div></div>
-                </div>
-
-                <!-- Skill 5 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Linux & Ubuntu Server</span>
-                        <span class="skill-value">6.5/10</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Spanisch</span>
+                            <span class="skill-value">3/10</span>
+                        </div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Spanisch: 3 von 10"><div class="skill-level" style="width: 30%;"></div></div>
                     </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 65%;"></div></div>
-                </div>
-
-                <!-- Skill 6 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Netzwerktechnik</span>
-                        <span class="skill-value">6/10</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 60%;"></div></div>
-                </div>
-
-                <!-- Skill 7 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Python</span>
-                        <span class="skill-value">4/10</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 40%;"></div></div>
-                </div>
-
-                <!-- Skill 8 -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Spanisch</span>
-                        <span class="skill-value">3/10</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 30%;"></div></div>
-                </div>
-
-                <!-- Deutsch -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Deutsch (Muttersprache)</span>
-                        <span class="skill-value">10/10</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 100%;"></div></div>
-                </div>
-
-                <!-- MS Office -->
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">MS Office (Word, Excel, PowerPoint)</span>
-                        <span class="skill-value">9/10</span>
-                    </div>
-                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
                 </div>
             </div>
         </section>
@@ -211,18 +237,20 @@
             <h2>Interessen</h2>
             <p><strong>Technologie:</strong> KI-Entwicklung, Server-Architekturen, Open-Source Software</p>
             <p><strong>Musik:</strong> Klassische Gitarre, E-Gitarre</p>
-            <p><strong>Sport:</strong> Segeln, Radfahren, Skifahren</p>
+            <p><strong>Sport:</strong> Segeln, Skifahren</p>
+            <p><strong>Gesellschaftliches:</strong> Brettspiele, Gaming</p>
         </section>
 
         <section id="kontakt">
             <h2>Kontakt</h2>
             <p>Für Anfragen stehe ich Ihnen gerne zur Verfügung.</p>
             
-            <form action="https://formspree.io/f/mbdedyww" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="E-Mail" required>
-                <textarea name="message" placeholder="Nachricht" required></textarea>
+            <form id="contact-form" action="https://formspree.io/f/mbdedyww" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Name" required aria-required="true">
+                <input type="email" name="email" placeholder="E-Mail" required aria-required="true">
+                <textarea name="message" placeholder="Nachricht" required aria-required="true"></textarea>
                 <button type="submit" class="nav-button" style="width: 100%;">Nachricht senden</button>
+                <div id="form-status" class="form-status"></div>
             </form>
         </section>
 

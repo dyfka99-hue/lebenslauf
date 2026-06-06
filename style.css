@@ -1,11 +1,26 @@
-/* Globale Variablen */
+/* 
+   ==========================================================================
+   PROJEKT: Portfolio Moritz Molva
+   STRUKTUR: Modernes Refactoring (Point 1 Compliance)
+   ========================================================================== */
+
 :root {
+    /* Colors - Light Mode */
     --bg-color: #fcfcfc;
     --surface-color: #ffffff;
     --text-main: #2b2b2b;
     --text-muted: #737373;
     --accent-color: #b4925a;
+    --accent-secondary: #64748b; /* Edles Slate Blue für mehr Tiefe */
     --dark: #121212;
+    --shadow-subtle: rgba(0, 0, 0, 0.04);
+    --shadow-medium: rgba(0, 0, 0, 0.07);
+    
+    /* Layout */
+    --container-width: 850px;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+    --header-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme='dark'],
@@ -15,313 +30,315 @@
     --text-main: #e0e0e0;
     --text-muted: #a0a0a0;
     --accent-color: #d4af37;
+    --accent-secondary: #94a3b8;
     --dark: #ffffff;
+    --shadow-subtle: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
 }
 
+/* Base Styles */
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 300;
     line-height: 1.7;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
     color: var(--text-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Sticky Header Bereich */
-#main-header {
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color);
-    padding: 40px 40px 20px 40px;
-    text-align: center;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    /* Übergang für Padding und Hintergrund */
-    border-bottom: 1px solid transparent;
-}
-
-#main-header.scrolled {
-    padding: 15px 40px;
-    border-bottom: 1px solid var(--accent-color);
-}
-
-#main-header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4.5rem;
-    font-weight: 600;
-    margin: 0;
+/* Typography Refresh */
+h1, h2, h3 {
     color: var(--dark);
-    transition: font-size 0.3s ease;
+    line-height: 1.2;
 }
 
-#main-header.scrolled h1 {
-    font-size: 2.5rem;
+.meta {
+    color: var(--accent-secondary); 
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
 
-.subtitle {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin: 10px 0 0 0;
-    transition: opacity 0.3s ease, margin 0.3s ease, height 0.3s ease;
-    opacity: 1;
-    overflow: hidden;
+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-/* Der Effekt beim Scrollen: Untertitel sanft ausblenden */
-#main-header.scrolled .subtitle {
-    opacity: 0;
-    margin: 0;
-    height: 0;
-}
-
-/* Theme Control Container */
-.theme-control {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    /* Zentriert die Buttons unter dem Namen */
-    gap: 15px;
-}
-
-/* Einheitliches Button Design */
-#theme-toggle,
-.nav-button {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 8px 20px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-#theme-toggle:hover,
-.nav-button:hover {
-    background-color: var(--accent-color);
-    color: var(--surface-color);
-}
-
-/* Container & Sektionen */
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    background: var(--surface-color);
-    margin: 40px 0;
-    padding: 50px 60px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-}
-
-.project-box {
-    background-color: var(--surface-color);
-    border-left: 3px solid var(--accent-color);
-    padding: 30px;
-    margin-bottom: 30px;
-    transition: background-color 0.3s ease;
-}
-
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    color: var(--dark);
-    margin-top: 0;
-    padding-bottom: 15px;
+ul li {
     position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
 }
+
+ul li::before {
+    content: '•'; /* Klassischer Bulletpoint */
+    position: absolute;
+    left: 0;
+    color: var(--accent-secondary); 
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+h1 { font-family: 'Cormorant Garamond', serif; }
+h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 1rem; position: relative; padding-bottom: 15px; }
 
 h2::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50px;
+    width: 40px;
     height: 2px;
     background-color: var(--accent-color);
 }
 
-/* Skill Bar Design */
+/* Layout Components */
+.container {
+    max-width: var(--container-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-wrap: break-word;
+}
+
+section {
+    background: var(--surface-color);
+    margin: 40px 0;
+    padding: 45px 55px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 25px var(--shadow-subtle);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Header Logic */
+#main-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    padding: 30px 40px 15px 40px;
+    text-align: center;
+    z-index: 1000;
+    transition: padding var(--header-transition), background-color var(--transition-speed);
+    border-bottom: 1px solid transparent;
+    will-change: padding;
+}
+
+#main-header.scrolled {
+    padding: 12px 40px;
+    border-bottom: 1px solid rgba(180, 146, 90, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+#main-header h1 {
+    font-size: clamp(2rem, 8vw, 3.8rem); /* Fluid Typography */
+    margin: 0;
+    transition: font-size var(--header-transition);
+}
+
+#main-header.scrolled h1 {
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 8px 0 0 0;
+    transition: opacity 0.3s, transform 0.3s, max-height 0.4s;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+#main-header.scrolled .subtitle {
+    opacity: 0;
+    transform: translateY(-5px);
+    max-height: 0;
+    margin: 0;
+}
+
+/* UI Elements */
+.theme-control {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-button, #theme-toggle {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 7px 18px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-button:hover, #theme-toggle:hover {
+    background: var(--accent-color);
+    color: var(--surface-color);
+    box-shadow: 0 4px 12px rgba(180, 146, 90, 0.2);
+}
+
+/* Project Boxes */
+.project-box {
+    border-left: 2px solid var(--accent-color);
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    background: var(--surface-color);
+    box-shadow: 0 2px 15px var(--shadow-subtle);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+/* Skills */
+.skill-category { margin-bottom: 35px; }
+.skill-category h3 {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(180, 146, 90, 0.15);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
 .skill-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px 40px;
 }
 
-/* Container für Name und Wert */
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    /* Sorgt dafür, dass alles auf einer Linie ist */
-    margin-bottom: 8px;
-}
-
-.skill-name {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text-main);
-}
-
-.skill-value {
-    color: var(--accent-color);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    font-variant-numeric: lining-nums;
-}
-
-.skill-bar {
-    width: 100%;
-    height: 4px;
-    background-color: #f0f0f0;
-    border-radius: 2px;
-}
-
-.skill-level {
-    height: 100%;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-}
-
-/* Mobile Anpassung: Einspaltig */
-@media (max-width: 768px) {
-    .skill-grid {
-        grid-template-columns: 1fr;
-    }
-}
+.skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.skill-value { color: var(--accent-color); font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+.skill-bar { height: 4px; background: rgba(100, 116, 139, 0.15); border-radius: 2px; }
+.skill-level { height: 100%; background: var(--accent-color); border-radius: 2px; }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 60px 20px;
     color: var(--text-muted);
     font-size: 0.85rem;
+    border-top: 1px solid rgba(100, 116, 139, 0.1);
+    margin-top: 40px;
 }
 
-/* Mobile Optimierung */
-@media (max-width: 768px) {
-
-    /* Skills untereinander statt nebeneinander */
-    .skill-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    /* Header: Name beim Scrollen stabil halten */
-    #main-header.scrolled h1 {
-        font-size: 1.5rem !important;
-        /* Fix gegen das "Größer-werden" */
-    }
-
-    /* Subtitle ausblenden, sobald Header komprimiert */
-    #main-header.scrolled .subtitle {
-        display: none;
-    }
-
-    /* Padding-Anpassung für den komprimierten Header */
-    #main-header.scrolled {
-        padding: 10px 20px;
-    }
+footer a {
+    transition: color 0.3s;
 }
 
-/* Styling für den Kontakt-Link innerhalb der Box */
-#kontakt a.nav-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+footer a:hover {
+    color: var(--accent-color) !important;
 }
 
-#kontakt a.nav-button:hover {
-    background-color: var(--accent-color);
-    color: var(--surface-color);
+/* Contact Form */
+.contact-form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    max-width: 100%; 
+    margin: 0;
 }
 
-#kontakt {
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    background: transparent;
+    color: var(--text-main);
+    font-family: inherit;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(180, 146, 90, 0.03);
+}
+
+/* Print & Accessibility */
+:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
+
+@media print {
+    #main-header, .theme-control, footer, #kontakt, #theme-toggle, .nav-button { display: none !important; }
+    body { background: white !important; color: black !important; font-size: 11pt; }
+    section { box-shadow: none !important; border: none !important; page-break-inside: avoid; margin: 10px 0; }
+    h1 { font-size: 28pt !important; text-align: center; }
+    h2 { font-size: 18pt !important; border-bottom: 1px solid #ccc; }
+    .skill-level { background: #555 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* Form Status Messages */
+.form-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: none;
     text-align: center;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
+.form-status.success {
+    display: block;
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+    border: 1px solid #2ecc71;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    background: transparent;
-    /* Macht die Box subtiler */
-    border: 1px solid var(--text-muted);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+.form-status.error {
+    display: block;
+    background-color: rgba(231, 76, 60, 0.1);
+    color: #c0392b;
+    border: 1px solid #e74c3c;
 }
 
-/* Der Zaubertrick: Wenn man in die Box klickt, wird der Rand golden */
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
+/* Scroll Reveal Base */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Design für den Platzhalter-Text, damit er im Dark Mode lesbar ist */
-.contact-form ::placeholder {
-    color: var(--text-muted);
+.reveal.active {
     opacity: 1;
-    /* Browser-Standard-Opacity beheben */
+    transform: translateY(0);
 }
 
-.contact-form textarea {
-    height: 120px;
-    resize: vertical;
-}
-
+/* Responsive Consolidation */
 @media (max-width: 768px) {
-    #main-header {
-        padding: 20px 20px 10px 20px;
-    }
+    section { padding: 30px 25px; margin: 30px 0; }
+    .skill-grid { grid-template-columns: 1fr; gap: 15px; }
+    #main-header.scrolled h1 { font-size: 1.5rem !important; }
+    #main-header { padding: 20px 20px 10px 20px; }
+}
 
-    #main-header.scrolled {
-        padding: 10px 20px;
-    }
-
-    #main-header h1 {
-        font-size: 2rem;
-    }
-
-    #main-header.scrolled h1 {
-        font-size: 1.5rem;
-    }
-
-    .skill-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+@media (max-width: 480px) {
+    body { line-height: 1.5; } 
+    section { padding: 25px 15px; margin: 20px 0; }
+    #main-header h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.8rem; }
+    .project-box { padding: 20px; }
 }
