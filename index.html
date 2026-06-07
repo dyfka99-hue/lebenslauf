@@ -20,7 +20,7 @@
       "jobTitle": "Student",
       "affiliation": "Technische Universität Wien",
       "description": "Fokus auf Technik, KI & IT-Infrastruktur",
-      "url": "https://deine-url.at"
+      "url": "https://github.com/moritz-molva"
     }
     </script>
 
@@ -38,6 +38,7 @@
     
     <div class="theme-control">
         <button id="theme-toggle" aria-label="Farbschema umschalten">Dark Mode</button>
+        <button id="pdf-export" class="nav-button">PDF Export</button>
         <a href="#kontakt" class="nav-button">Kontakt</a>
     </div>
 </header>
@@ -51,7 +52,7 @@
                 <h3>Wirtschaftsingenieurswesen Maschinenbau</h3>
                 <p class="meta">Technische Universität Wien | 10/2025 - Heute</p>
                 <p>Fokus während der Orientierungsphase auf ein technisches und wirtschaftliches Fundament (Maschinenbau, Betriebswissenschaften). Ab Wintersemester 2026 synergetische Weiterführung im Studium <strong>Raumplanung und Raumordnung</strong>, um technische Expertise mit räumlicher Planung zu verknüpfen.</p>
-                <p style="margin-top: 15px; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-muted);">Erfolgreich absolvierte Kernmodule:</p>
+                <p class="module-hint">Erfolgreich absolvierte Kernmodule:</p>
                 <ul>
                     <li><strong>Wirtschaft & Management:</strong> Projektmanagement, Grundlagen der Betriebs- und Unternehmensführung, Rechnungswesen</li>
                     <li><strong>Technik & Konstruktion:</strong> Technisches Zeichnen / CAD, Einführung in Maschinenwesen und Betriebswissenschaften</li>
@@ -192,7 +193,7 @@
             </div>
 
             <!-- Kategorie 3: Sprachen -->
-            <div class="skill-category" style="margin-bottom: 0;">
+            <div class="skill-category no-margin-bottom">
                 <h3>Sprachen</h3>
                 <div class="skill-grid">
                     <div class="skill-item">
@@ -204,60 +205,76 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">Englisch</span>
-                            <span class="skill-value">9/10</span>
+                            <span class="skill-name">Englisch (C1)</span>
+                            <span class="skill-value">8/10</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Englisch: 9 von 10"><div class="skill-level" style="width: 90%;"></div></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Englisch: 8 von 10"><div class="skill-level" style="width: 80%;"></div></div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">Spanisch</span>
-                            <span class="skill-value">3/10</span>
+                            <span class="skill-name">Spanisch (A2)</span>
+                            <span class="skill-value">4/10</span>
                         </div>
-                        <div class="skill-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Spanisch: 3 von 10"><div class="skill-level" style="width: 30%;"></div></div>
+                        <div class="skill-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Kenntnisse in Spanisch: 4 von 10"><div class="skill-level" style="width: 40%;"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="soft-skills">
-            <h2>Persönliche Stärken</h2>
-            <div class="entry">
-                <ul>
-                    <li><strong>Analytische Problemlösung:</strong> Systematisches Troubleshooting und präzise Evaluierung komplexer technischer Systeme.</li>
-                    <li><strong>Durchsetzungsvermögen & Diskussionsstärke:</strong> Souveräner Umgang mit herausfordernden Gesprächssituationen und klare Argumentationsführung, erprobt durch ein lebhaftes persönliches Umfeld.</li>
-                    <li><strong>Autodidaktik & Eigeninitiative:</strong> Schnelle, selbstständige Einarbeitung in neue Themenfelder.</li>
-                    <li><strong>Selbstmanagement & Fokus:</strong> Bewusste Steuerung der eigenen Ressourcen und konsequente Priorisierung der persönlichen Ziele, um stets ein hohes Leistungsniveau zu halten.</li>
-                    <li><strong>Strukturierte Organisation:</strong> Verlässliche Planung und digitale Dokumentation von Arbeitsabläufen.</li>
-                </ul>
-            </div>
-        </section>
+        <div class="print-sidebar">
+            <section id="soft-skills">
+                <h2>Persönliche Stärken</h2>
+                <div class="entry">
+                    <ul>
+                        <li><strong>Analytische Problemlösung:</strong> Systematisches Troubleshooting und präzise Evaluierung komplexer technischer Systeme.</li>
+                        <li><strong>Durchsetzungsvermögen & Diskussionsstärke:</strong> Souveräner Umgang mit herausfordernden Gesprächssituationen und klare Argumentationsführung, erprobt durch ein lebhaftes persönliches Umfeld.</li>
+                        <li><strong>Autodidaktik & Eigeninitiative:</strong> Schnelle, selbstständige Einarbeitung in neue Themenfelder.</li>
+                        <li><strong>Selbstmanagement & Fokus:</strong> Bewusste Steuerung der eigenen Ressourcen und konsequente Priorisierung der persönlichen Ziele, um stets ein hohes Leistungsniveau zu halten.</li>
+                        <li><strong>Strukturierte Organisation:</strong> Verlässliche Planung und digitale Dokumentation von Arbeitsabläufen.</li>
+                    </ul>
+                </div>
+            </section>
 
-        <section id="interessen">
-            <h2>Interessen</h2>
-            <p><strong>Technologie:</strong> KI-Entwicklung, Server-Architekturen, Open-Source Software</p>
-            <p><strong>Musik:</strong> Klassische Gitarre, E-Gitarre</p>
-            <p><strong>Sport:</strong> Segeln, Skifahren</p>
-            <p><strong>Gesellschaftliches:</strong> Brettspiele, Gaming</p>
-        </section>
+            <section id="interessen">
+                <h2>Interessen</h2>
+                <p><strong>Technologie:</strong> KI-Entwicklung, Server-Architekturen, Open-Source Software</p>
+                <p><strong>Musik:</strong> Klassische Gitarre, E-Gitarre</p>
+                <p><strong>Sport:</strong> Segeln, Skifahren</p>
+                <p><strong>Gesellschaftliches:</strong> Brettspiele, Gaming</p>
+            </section>
+        </div>
 
         <section id="kontakt">
             <h2>Kontakt</h2>
             <p>Für Anfragen stehe ich Ihnen gerne zur Verfügung.</p>
             
-            <form id="contact-form" action="https://formspree.io/f/mbdedyww" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Name" required aria-required="true">
-                <input type="email" name="email" placeholder="E-Mail" required aria-required="true">
-                <textarea name="message" placeholder="Nachricht" required aria-required="true"></textarea>
+            <form id="contact-form" action="https://formspree.io/f/mbdedyww" method="POST" class="contact-form" aria-labelledby="kontakt-heading">
+                <h2 id="kontakt-heading" class="sr-only">Kontaktformular</h2>
+                
+                <div class="form-group">
+                    <label for="name" class="sr-only">Ihr Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="sr-only">Ihre E-Mail-Adresse</label>
+                    <input type="email" id="email" name="email" placeholder="E-Mail" required aria-required="true">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="sr-only">Ihre Nachricht</label>
+                    <textarea id="message" name="message" placeholder="Nachricht" required aria-required="true"></textarea>
+                </div>
+                
                 <button type="submit" class="nav-button" style="width: 100%;">Nachricht senden</button>
-                <div id="form-status" class="form-status"></div>
+                <div id="form-status" class="form-status" aria-live="polite"></div>
             </form>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Moritz Molva. <a href="impressum.html" style="color: var(--text-muted);">Impressum</a></p>
+        <p>&copy; 2026 Moritz Molva. <a href="impressum.html" class="footer-link">Impressum</a></p>
     </footer>
 
     <script src="script.js"></script>

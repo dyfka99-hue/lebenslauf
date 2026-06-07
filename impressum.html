@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <section>
-            <h2>Impressum</h2>
+    <main class="container">
+        <section aria-labelledby="impressum-heading">
+            <h2 id="impressum-heading">Impressum</h2>
             <p><strong>Verantwortlich für den Inhalt:</strong></p>
-            <p>Moritz Molva</p>
-            <p>Kontakt: <a href="mailto:moritzmolva.dev@gmail.com">moritzmolva.dev@gmail.com</a></p>
+            <address style="font-style: normal; margin-bottom: 20px;">
+                Moritz Molva<br>
+                Kontakt: <a href="mailto:moritzmolva.dev@gmail.com">moritzmolva.dev@gmail.com</a>
+            </address>
             
-            <h3 style="margin-top: 30px;">Informationen</h3>
+            <h3 class="impressum-info-title">Informationen</h3>
             <p>Diese Website dient ausschließlich der privaten Präsentation meiner IT-Projekte und meiner beruflichen Qualifikationen im Rahmen der Jobsuche.</p>
             
-            <a href="index.html" class="nav-button" style="margin-top: 20px; display: inline-block;">Zurück zum Lebenslauf</a>
+            <a href="index.html" class="nav-button impressum-back-link">Zurück zum Lebenslauf</a>
         </section>
-    </div>
+    </main>
 
     <footer>
         <p>&copy; 2026 Moritz Molva. Alle Rechte vorbehalten.</p>

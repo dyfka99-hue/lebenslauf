@@ -47,17 +47,36 @@ if (contactForm && formStatus) {
                 headers: { 'Accept': 'application/json' }
             });
 
+            const result = await response.json();
+
             if (response.ok) {
                 formStatus.innerText = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.';
                 formStatus.className = 'form-status success';
                 contactForm.reset();
             } else {
-                throw new Error();
+                console.error('Formspree Fehler:', result);
+                if (result.errors) {
+                    formStatus.innerText = result.errors.map(error => error.message).join(', ');
+                } else if (result.error) {
+                    formStatus.innerText = result.error;
+                } else {
+                    throw new Error();
+                }
+                formStatus.className = 'form-status error';
             }
         } catch (error) {
+            console.error('Submission Error:', error);
             formStatus.innerText = 'Hoppla! Da ist etwas schiefgelaufen. Bitte versuchen Sie es später erneut.';
             formStatus.className = 'form-status error';
         }
+    });
+}
+
+// PDF Export / Print Handling
+const pdfButton = document.getElementById('pdf-export');
+if (pdfButton) {
+    pdfButton.addEventListener('click', () => {
+        window.print();
     });
 }
 
